@@ -1,11 +1,7 @@
 {
-	"ImportPath": "ListRockers",
+	"ImportPath": "db/people",
 	"GoVersion": "go1.3",
 	"Deps": [
-		{
-			"ImportPath": "db/people",
-			"Rev": "d632bdf157bb29103a3f8b7e04fd346e4ed79198"
-		},
 		{
 			"ImportPath": "github.com/lib/pq",
 			"Rev": "6d16a400975d186dbbf6334350fca31721b6efe5"

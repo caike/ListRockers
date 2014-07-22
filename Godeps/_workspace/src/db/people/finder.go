@@ -10,8 +10,8 @@ func FindAll() []string {
 
 	conninfo := os.Getenv("HEROKU_POSTGRESQL_SILVER_URL")
 	db, err := sql.Open("postgres", conninfo)
-
 	PanicIf(err)
+	defer db.Close()
 
 	rows, err := db.Query("SELECT name FROM people;")
 	PanicIf(err)

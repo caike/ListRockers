@@ -3,10 +3,14 @@ package people
 import (
 	"database/sql"
 	_ "github.com/lib/pq"
+	"os"
 )
 
 func FindAll() []string {
-	db, err := sql.Open("postgres", "dbname=go_people sslmode=disable")
+
+	conninfo := os.Getenv("HEROKU_POSTGRESQL_SILVER_URL")
+	db, err := sql.Open("postgres", conninfo)
+
 	PanicIf(err)
 
 	rows, err := db.Query("SELECT name FROM people;")
